@@ -1,0 +1,208 @@
+@import 'config';
+@import 'menu';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @include background;
+    background: $primary-color;
+    color: set-text-color($primary-color);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+// Headings
+h1,
+h2,
+h3 {
+    margin: 0;
+
+    &.lg-heading {
+        font-weight: 550;
+        font-size: 6rem;
+    }
+
+    &.sm-heading {
+        font-weight: 400;
+        margin-bottom: 2rem;
+        padding: 0.2rem 1rem;
+        background: rgba(lighten($primary-color, 2), 0.5);
+    }
+}
+
+a {
+    color: set-text-color($primary-color);
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+
+.text-secondary {
+    color: $secondary-color;
+}
+
+main {
+    padding: 4rem;
+    min-height: calc(100vh - 1.5rem); // To create a sticky footer
+
+    &#home {
+        overflow: hidden;
+
+        h1 {
+            margin-top: 20vh;
+        }
+    }
+
+    .icons {
+        margin-top: 1rem;
+
+        a {
+            padding: 0.4rem;
+
+            &:hover {
+                color: $secondary-color;
+                @include easeOut;
+            }
+        }
+    }
+}
+
+// About Me Page 
+.about-info {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+        'bioimage bio bio'
+        'exp1 exp2 exp3';
+    grid-template-columns: repeat(3, 1fr);
+
+    .bio-image {
+        grid-area: bioimage;
+        margin: auto;
+        /* min-width: 150px; 
+        min-height: 150px; 
+        max-width: 250px;
+        max-height: 250px; */
+        width: fit-content;
+        height: 150px;
+        object-fit: cover;
+        object-position: 0px -15px;
+        border-radius: 50%;
+        border: $secondary-color 3px solid;
+        overflow: hidden;
+    }
+
+
+    .bio {
+        grid-area: bio;
+        font-size: 1.5rem;
+    }
+
+    .exp-1 {
+        grid-area: exp1;
+    }
+
+    .exp-2 {
+        grid-area: exp2;
+    }
+
+    .exp-3 {
+        grid-area: exp3;
+    }
+
+    .exp {
+        background: lighten($primary-color, 5);
+        padding: 0.5rem;
+        border-bottom: $secondary-color 5px solid;
+    }
+}
+
+// Work/Projects Page 
+.projects {
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    img {
+        width: 100%;
+        max-height: 160px;
+        border: 3px #fff solid;
+
+        &:hover {
+            opacity: 0.5;
+            border-color: $secondary-color;
+            @include easeOut;
+        }
+    }
+}
+
+// Contact Page 
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+
+    div {
+        font-size: 2rem;
+        border: 3px #fff solid;
+        padding: 1rem 2rem;
+        margin-bottom: 3rem;
+        @include easeOut;
+
+        &:hover {
+            padding: 2rem 2.5rem;
+            background: $secondary-color;
+            color: set-text-color($secondary-color);
+
+            span {
+                color: set-text-color($secondary-color);
+            }
+        }
+    }
+}
+
+// Button Styles 
+.btn {
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 0;
+    margin-bottom: 0.3rem;
+
+    &:hover {
+        background: $secondary-color;
+        color: set-text-color($secondary-color);
+    }
+}
+
+.btn-light {
+    @extend .btn;
+    background: darken($primary-color, 50);
+    color: #fff;
+}
+
+.btn-dark {
+    @extend .btn;
+    background: lighten($primary-color, 50);
+    color: #333;
+}
+
+#main-footer {
+    text-align: center;
+    background: darken($primary-color, 10);
+    color: set-text-color($primary-color);
+    height: 1.5rem;
+}
+
+@import 'mobile';
