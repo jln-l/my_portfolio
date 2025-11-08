@@ -56,7 +56,7 @@ If you have any questions, suggestions, or just want to connect, you can reach m
 
 - Email: ynjliu6@gmail.com
 - GitHub: jln-l(https://github.com/jln-l)
-- LinkedIn: Joleen Liu(http://linkedin.com/in/joleen-liu-641126306)
+- LinkedIn: Joleen Liu(www.linkedin.com/in/yan-nok-joleen-liu-1b2580346)
 
 I would be happy to hear from you and discuss anything related to this project or web development in general.
 
